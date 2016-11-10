@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>古话粤语</title>
+</head>
+<body>
+<div id="app">
+        <div class="first-bg">
+            <img src="image/cover-pic.png">
+        </div>
+        <div class="stage-panel" >
+            <div class="stage-title">
+                <img src="image/logo-red.png">
+                <div>點選廣古封<br/>進入遊戲</div>
+                <div>规则介绍<br/><small>看图猜俗语</small><p>从候选文字中选出正确答案</p></div>
+            </div>
+            <div class="stage-select" >
+                <div class="stage-box"  >
+                    <img class="active" >
+                </div>
+            </div>
+            <div class="que-panel">
+                <div class="rule-page">
+                    <!-- <img src="./assets/image/example.png"> -->
+                    <!-- <p>在{{ stageque.questions[0].time }}秒内完成{{stageque.questions.length}}题挑战</p> -->
+                    <button class="btn">点此开始</button>
+                </div>
+            </div>
+        </div>
+        <div class="answer-panel">
+            <div class="top-bar">
+                <span class="restart">重新开始</span>
+                <div class="timer">0'00"</div>
+                <span class="skip">跳过此题</span>
+            </div>
+            <div class="question-pic">
+                <img src="image/logo-red.png">
+                <span class="quenum">第几题</span>
+            </div>
+            <div class="answer-area">
+                <div class="answer-box">这是答案</div>
+                <div class="words-box">
+                    <span class="word">这</span>
+                    {{question}}
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

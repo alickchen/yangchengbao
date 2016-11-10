@@ -1,0 +1,38 @@
+{ "programmers": [
+
+{ "firstName": "Brett", "lastName":"McLaughlin", "email": "aaaa" },
+
+{ "firstName": "Jason", "lastName":"Hunter", "email": "bbbb" },
+
+{ "firstName": "Elliotte", "lastName":"Harold", "email": "cccc" }
+
+],
+
+"authors": [
+
+{ "firstName": "Isaac", "lastName": "Asimov", "genre": "science fiction" },
+
+{ "firstName": "Tad", "lastName": "Williams", "genre": "fantasy" },
+
+{ "firstName": "Frank", "lastName": "Peretti", "genre": "christian fiction" }
+
+],
+
+"questionbank": [
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]},
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]},
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]},
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]},
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]},
+{ "questions": [ { "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"},{ "img": "/static/img/demo.jpeg", "answer": "恭喜发财", "word": "恭喜发财对的你没有看错这就是为了凑够二十四个字的" ,"time":"30"}]}
+],
+
+
+"stagepics": [
+{ "url": "/static/img/demo.jpeg"},
+{ "url": "/static/img/demo.jpeg"},
+{ "url": "/static/img/demo.jpeg"},
+{ "url": "/static/img/demo.jpeg"},
+{ "url": "/static/img/demo.jpeg"},
+{ "url": "/static/img/demo.jpeg"}
+]}

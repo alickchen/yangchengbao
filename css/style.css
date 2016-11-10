@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+#app {
+  width: 100%;
+  height: 100vh;
+}
+#app .first-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+#app .first-bg img {
+  width: 100%;
+  height: 100%;
+}
+#app .stage-panel {
+  width: 100%;
+  height: 100%;
+}
+#app .stage-panel .stage-title {
+  width: 100%;
+  height: 30vh;
+}
+#app .stage-panel .stage-title img {
+  height: 100%;
+  width: 100%;
+}
+#app .stage-panel .stage-select {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+#app .stage-panel .stage-select .stage-box {
+  height: 35vh;
+  width: 33%;
+  display: inline-block;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  /*Safari3.2+*/
+  -ms-box-sizing: border-box;
+  /*IE8*/
+  box-sizing: border-box;
+}
+#app .stage-panel .stage-select .stage-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+#app .stage-panel .stage-select .stage-box img.active {
+  opacity: 1;
+}
