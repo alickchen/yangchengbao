@@ -2,48 +2,62 @@
   margin: 0;
   padding: 0;
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s;
+img {
+  width: 100px !important;
+  height: 100px !important;
 }
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-#app {
+.container {
   width: 100%;
   height: 100vh;
 }
-#app .first-bg {
+.container .cover-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  display: none;
+  background-size: 40px 41px;
   z-index: 20;
+  text-align: center;
+  font-weight: bold;
 }
-#app .first-bg img {
+.container .cover-bg img {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.container .ready-page {
   width: 100%;
   height: 100%;
+  background-size: 40px 41px;
 }
-#app .stage-panel {
+.container .ready-page .ready-title {
   width: 100%;
-  height: 100%;
+  height: 10vh;
+  text-align: center;
+  color: #d42339;
+  font-size: 24px;
+  font-weight: 900;
 }
-#app .stage-panel .stage-title {
-  width: 100%;
-  height: 30vh;
+.container .ready-page .ready-title img {
+  width: 80%;
+  max-width: 350px;
+  display: inline-block;
 }
-#app .stage-panel .stage-title img {
-  height: 100%;
+.container .ready-page .stage-panel {
   width: 100%;
-}
-#app .stage-panel .stage-select {
-  width: 100%;
-  height: 70vh;
+  height: 80vh;
   position: relative;
 }
-#app .stage-panel .stage-select .stage-box {
+.container .ready-page .stage-panel .stage-select {
+  height: 70vh;
+}
+.container .ready-page .stage-panel .stage-select .stage-box {
   height: 35vh;
   width: 33%;
   display: inline-block;
@@ -54,12 +68,35 @@
   /*IE8*/
   box-sizing: border-box;
 }
-#app .stage-panel .stage-select .stage-box img {
+.container .ready-page .stage-panel .stage-select .stage-box img {
   display: block;
   width: 100%;
-  height: 100%;
+  min-height: 95%;
+  max-height: 102%;
   opacity: 0.5;
 }
-#app .stage-panel .stage-select .stage-box img.active {
+.container .ready-page .stage-panel .stage-select .stage-box img.active {
   opacity: 1;
+}
+.container .ready-page .rule-panel {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.container .ready-page .rule-panel img {
+  width: 100%;
+}
+.container .ready-page .rule-panel .btn {
+  background: #d42339;
+  width: 60px;
+  height: 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+.container .answer-page {
+  display: none;
+}
+.container .answer-page .answer-area .words-box .selected {
+  color: red;
 }

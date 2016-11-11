@@ -1,59 +1,106 @@
+@mainred: #d42339;
 *{
   margin: 0;
   padding: 0;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .4s
+img {
+  width: 100px !important;
+  height: 100px !important;
 }
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
-#app{
-width: 100%;
-height: 100vh;
-  .first-bg {
+.container{
+  width: 100%;
+  height: 100vh;
+  .cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    //background: url("../image/red-bg.png") ;
+    display: none;
+    background-size: 40px 41px;
+    z-index: 20;
+    text-align: center;
+    font-weight: bold;
+    img {
+      height: 100vh;
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .ready-page {
+    width: 100%;
+    height: 100%;
+    //background: url("../image/white-bg.png") ;
+    background-size:  40px 41px;
+    .ready-title {
+      width: 100%;
+      height: 10vh;
+      text-align: center;
+      color:  @mainred;
+      font-size: 24px;
+      font-weight: 900;
+
+      img {
+        width: 80%;
+        max-width: 350px;
+        display: inline-block;
+      }
+    }
+    .stage-panel {
+      width: 100%;
+      height: 80vh;
+      position: relative;
+      .stage-select {
+        height: 70vh;
+        .stage-box {
+          height: 35vh;
+          width: 33%;
+          display: inline-block;
+          padding: 10px;
+          -webkit-box-sizing: border-box; /*Safari3.2+*/
+          -ms-box-sizing: border-box; /*IE8*/
+          box-sizing: border-box;
+          img {
+            display: block;
+            width: 100%;
+            min-height: 95%;
+            max-height: 102%;
+            opacity: 0.5;
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .rule-panel {
       width: 100%;
       height: 100%;
-      z-index: 20;
+      display: none;
       img {
         width: 100%;
-        height: 100%;
+      }
+      .btn {
+        background: @mainred;
+        width: 60px;
+        height: 30px;
+        color: #fff;
+        outline: none;
+        border: none;
       }
     }
-  .stage-panel {
-   width: 100%;
-   height: 100%;
-    .stage-title {
-    width: 100%;
-    height: 30vh;
-    img {
-      height: 100%;
-      width: 100%;
-      }
-    }
-    .stage-select {
-      width: 100%;
-      height: 70vh;
-      position: relative;
-      .stage-box {
-        height: 35vh;
-        width: 33%;
-        display: inline-block;
-        padding: 10px;
-        -webkit-box-sizing: border-box; /*Safari3.2+*/
-        -ms-box-sizing: border-box; /*IE8*/
-        box-sizing: border-box;
-        img {
-         display: block;
-         width: 100%;
-         height: 100%;
-         opacity: 0.5;
-        &.active {
-            opacity: 1;
-        }
+  }
+  .answer-page {
+    display: none;
+    .answer-area {
+      .words-box {
+        .selected {
+          color: red;
         }
       }
     }
