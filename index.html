@@ -87,16 +87,22 @@
             var quenumtext =["第一题","第二题","第三题","第四题","第五题","第六题"];
             var syssecond;
             var intervalobj;
+            var queindex = 0;
+            var daan = "";
 
             init();
 
             $start.click(function () {
-                initquestion(stagequestions[0],0);
+                initquestion(queindex);
                 $readypage.hide();
                 $answerpage.show();
                 startCounting(time);
             });
+            $restart.click(function () {
 
+
+
+            });
 
 
             function init() {
@@ -124,16 +130,26 @@
                  }
             }
 
-            function initquestion(question,index) {
-                $questionpic.attr("src",question.img);
-                $questionnum.text(quenumtext[index]);
-                $answerbox.attr("data-answer",question.answer).addClass("answer"+question.answer.length);
-                for (var i=0; i<question.answer.length;i++) {
-                   $("<span class='anser-word'></span>").click(answerclick).appendTo($answerbox);
-                }
-                $.each(question.words.split(""),function (index,word){
-                    $("<span class='word'></span>").text(word).click(wordclick).appendTo($wordsbox);
-                })
+            function initquestion(index) {
+
+                var item = stagequestions[index];
+                  if(item){
+                      $questionpic.attr("src",item.img);
+                      $questionnum.text(quenumtext[index]);
+                      daan = item.answer;
+                      $answerbox.attr({"data-answer":item.answer, "class":"answer-box"}).addClass("answer"+item.answer.length);
+                      $answerbox.empty();
+                      $wordsbox.empty();
+                      for (var i=0; i<item.answer.length;i++) {
+                          $("<span class='anser-word'></span>").click(answerclick).appendTo($answerbox);
+                      }
+                      $.each(item.words.split(""),function (index,word){
+                          $("<span class='word'></span>").text(word).click(wordclick).appendTo($wordsbox);
+                      })
+                  }else {
+                      alert("恭喜你!!通关了!");
+                  }
+
             }
             function answerclick() {
                 if ($(this).text()){
@@ -172,8 +188,10 @@
                 $answerbox.find(".anser-word").each(function () {
                     answer= answer + $(this).text();
                 });
-                if (answer == $answerbox.data("answer")){
-                    console.log("答对了!");
+
+                if (answer == daan){
+                    queindex++;
+                    initquestion(queindex)
                 }
             }
             function startCounting(second) {

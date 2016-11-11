@@ -97,6 +97,12 @@ img {
 .container .answer-page {
   display: none;
 }
-.container .answer-page .answer-area .words-box .selected {
+.container .answer-page .words-box .selected {
   color: red;
+}
+.container .answer-page .answer-area .answer-box .anser-word {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
 }
