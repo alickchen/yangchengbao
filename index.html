@@ -2,220 +2,89 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aiism-人工智能图片和视频处理专家，在线图片深层艺术滤镜处理工具</title>
+    <title>估畵粵語</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
     <div class="container">
         <div class="cover-bg">
-            <img src="image/modelpic-1.jpg">
+            <img src="image/cover-pic.png">
         </div>
         <div class="ready-page">
             <div class="ready-title">
-                <img src="image/modelpic-1.jpg">
+                <img src="image/logo-red.png">
             </div>
+            <div class="stage-text"><p>點選廣古封</p><p>進入遊戲</p></div>
             <div class="stage-panel">
                 <div class="stage-select">
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="0">
+                        <img  src="image/stage1.png" data-level="0">
                     </div>
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="1">
+                        <img  src="image/stage2.png" data-level="1">
                     </div>
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="2">
+                        <img  src="image/stage3.png" data-level="2">
                     </div>
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="3">
+                        <img  src="image/stage4.png" data-level="3">
                     </div>
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="4">
+                        <img  src="image/stage5.png" data-level="4">
                     </div>
                     <div class="stage-box">
-                        <img  src="image/modelpic-1.jpg" data-level="5">
+                        <img  src="image/stage6.png" data-level="5">
                     </div>
                 </div>
             </div>
+            <div class="rules"><p>規則介紹</p><small><b>看圖猜俗語</b></small><small>從候選文字中選出正確答案</small></div>
             <div class="rule-panel">
-                 <img src="image/modelpic-1.jpg">
-                 <p class="rule-text">在120秒内完成8题挑战</p>
-                <button class="start">点此开始</button>
+                 <img src="image/example.png">
+                 <p class="ru-text rule-text">在120秒內完成8題挑戰</p>
+                 <p class="ru-text">達到正確數量可晉級下一局</p>
+                 <p class="ru-text">(無解時可點選右上角跳往下一題)</p>
+                <button class="start">點此開始</button>
             </div>
         </div>
         <div class="answer-page">
             <div class="top-bar">
-                <span class="restart">重新开始</span>
-                <div class="timer">0'00"</div>
-                <span class="skip">跳过此题</span>
+                <span class="restart">&lt;重新開始</span>
+                <div class="timer">0&#39;00&quot;</div>
+                <span class="skip">跳過此題&gt;</span>
             </div>
             <div class="question-pic">
-                <img src="image/modelpic-1.jpg">
+                <img src="image/level0/拜神唔見雞.png">
                 <span class="quenum">第一题</span>
             </div>
             <div class="answer-area">
                 <div class="answer-box"></div>
-                <div class="words-box"></div>
+                <div class="words-box"> </div>
+            </div>
+        </div>
+        <div class="finish-page">
+            <div class="finish-title">
+                <img src="image/logo-gold.png">
+            </div>
+            <div class="record">
+                 <div class="record-text">
+                     <h2>第二關完成</h2>
+                     <p>恭喜你叻過0000位自己友，</p>
+                     <p>並獲得提名：</p>
+                 </div>
+                <div class="record-title">鳩屎狀元</div>
+                 <h2 class="more-text">巧犀利啊!</h2>
+            </div>
+            <div class="finish-link continue">
+               <!--  <a class="f-link" href="#"></a>
+                <span  class="f-link retry" ></span>
+                <span class="f-link share"></span> -->
             </div>
         </div>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type='text/javascript'>
-        $(function () {
-            var $coverbg = $(".cover-bg");
-
-            var $readypage = $(".ready-page");
-            var $stagepanel = $(".ready-page .stage-panel");
-            var $stageimg = $(".ready-page .stage-panel .stage-box img");
-            var $rulepanel = $(".ready-page .rule-panel");
-            var $ruletext = $(".ready-page .rule-panel .rule-text");
-            var $start = $(".ready-page .rule-panel .start");
-
-            var $answerpage = $(".answer-page");
-            var $questionpic = $(".answer-page .question-pic img");
-            var $questionnum = $(".answer-page .question-pic .quenum");
-            var $answerbox = $(".answer-page .answer-area .answer-box");
-            var $wordsbox = $(".answer-page .answer-area .words-box");
-            var $restart = $(".answer-page .top-bar .restart");
-            var $timer = $(".answer-page .top-bar .timer");
-            var $skip = $(".answer-page .top-bar .skip");
-
-            var level = 4;
-            var questionbase={};
-            var stagequestions=[];
-            var time = 120;
-            var quenumtext =["第一题","第二题","第三题","第四题","第五题","第六题"];
-            var syssecond;
-            var intervalobj;
-            var queindex = 0;
-            var daan = "";
-
-            init();
-
-            $start.click(function () {
-                initquestion(queindex);
-                $readypage.hide();
-                $answerpage.show();
-                startCounting(time);
-            });
-            $restart.click(function () {
-
-
-
-            });
-
-
-            function init() {
-                $.getJSON("data.json",function (data) {
-                    questionbase = data;
-                });
-                initStagepanel(level);
-            }
-
-
-            function startChallenge (i){
-                stagequestions = questionbase["level"+i].questions;
-                time = questionbase["level"+i].time;
-                $ruletext.text("请在"+time+"秒内完成"+stagequestions.length+"题挑战");
-                $stagepanel.hide();
-                $rulepanel.show();
-            }
-
-
-            function initStagepanel(n) {
-                 for (var i=0; i<=n;i++) {
-                     $stageimg.eq(i).addClass("active").click(function () {
-                         startChallenge ($(this).data("level"));
-                     })
-                 }
-            }
-
-            function initquestion(index) {
-
-                var item = stagequestions[index];
-                  if(item){
-                      $questionpic.attr("src",item.img);
-                      $questionnum.text(quenumtext[index]);
-                      daan = item.answer;
-                      $answerbox.attr({"data-answer":item.answer, "class":"answer-box"}).addClass("answer"+item.answer.length);
-                      $answerbox.empty();
-                      $wordsbox.empty();
-                      for (var i=0; i<item.answer.length;i++) {
-                          $("<span class='anser-word'></span>").click(answerclick).appendTo($answerbox);
-                      }
-                      $.each(item.words.split(""),function (index,word){
-                          $("<span class='word'></span>").text(word).click(wordclick).appendTo($wordsbox);
-                      })
-                  }else {
-                      alert("恭喜你!!通关了!");
-                  }
-
-            }
-            function answerclick() {
-                if ($(this).text()){
-                    var word = $(this).text();
-                    $(this).empty();
-                    $wordsbox.find(".selected").each(function () {
-                        if ($(this).text()==word){
-                            $(this).removeClass("selected");
-                        }
-                    });
-                }
-            }
-            
-            function wordclick() {
-                var word = $(this).text();
-                if($(this).hasClass("selected")){
-                    $(this).removeClass("selected");
-                    $answerbox.find(".anser-word").each(function () {
-                        if ($(this).text()==word){
-                            $(this).empty();
-                        }
-                    })
-                }else {
-                    for (var i=0; i< $answerbox.find(".anser-word").size();i++) {
-                        if (!$answerbox.find(".anser-word").eq(i).text()) {
-                            $answerbox.find(".anser-word").eq(i).text(word);
-                            $(this).addClass("selected");
-                            break;
-                        }
-                    }
-                    checkanswer();
-                }
-            }
-            function checkanswer() {
-                var answer ="";
-                $answerbox.find(".anser-word").each(function () {
-                    answer= answer + $(this).text();
-                });
-
-                if (answer == daan){
-                    queindex++;
-                    initquestion(queindex)
-                }
-            }
-            function startCounting(second) {
-                syssecond = second;
-                setRemainTime();
-                intervalobj = window.setInterval(setRemainTime, 1000);
-            }
-
-            function timesup() {
-                alert("时间到!");
-            }
-            function setRemainTime() {
-                if (syssecond > 0) {
-                    syssecond = syssecond - 1;
-                    var second = Math.floor(syssecond % 60);
-                    var minite = Math.floor((syssecond / 60) % 60);
-                    $timer.text( minite + "分" + second + "秒");
-                } else {
-                    window.clearInterval(intervalobj);
-                    timesup();
-                }
-            }
-
-        });
-    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
 </body>
 </html>

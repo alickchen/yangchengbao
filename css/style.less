@@ -1,23 +1,22 @@
 @mainred: #d42339;
+@gold: #f0d9b3;
 *{
   margin: 0;
   padding: 0;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
-img {
-  width: 100px !important;
-  height: 100px !important;
-}
+html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
 .container{
   width: 100%;
   height: 100vh;
   .cover-bg {
+    // display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height:100%;
-    //background: url("../image/red-bg.png") ;
-    display: none;
+    background: url("../image/red-bg.png") ;
     background-size: 40px 41px;
     z-index: 20;
     text-align: center;
@@ -33,37 +32,44 @@ img {
     }
   }
   .ready-page {
+    // display: none;
     width: 100%;
     height: 100%;
-    //background: url("../image/white-bg.png") ;
+    background: url("../image/white-bg.png") ;
     background-size:  40px 41px;
     .ready-title {
       width: 100%;
-      height: 10vh;
+      height: 15%;
       text-align: center;
-      color:  @mainred;
-      font-size: 24px;
-      font-weight: 900;
-
+      min-height: 87px;
       img {
         width: 80%;
         max-width: 350px;
         display: inline-block;
       }
     }
+    .stage-text {
+      color:  @mainred;
+      font-size:  2.2rem;
+      font-weight: 900;
+      text-align: center;
+      max-height: 15%;
+      width: 100%;
+      display: block;
+    }
+
     .stage-panel {
       width: 100%;
-      height: 80vh;
+      height: 70%;
       position: relative;
       .stage-select {
-        height: 70vh;
         .stage-box {
           height: 35vh;
           width: 33%;
+          margin: 0 -3px;
           display: inline-block;
           padding: 10px;
           -webkit-box-sizing: border-box; /*Safari3.2+*/
-          -ms-box-sizing: border-box; /*IE8*/
           box-sizing: border-box;
           img {
             display: block;
@@ -78,40 +84,252 @@ img {
         }
       }
     }
+    .rules {
+      color:  @mainred;
+      font-size:  2.2rem;
+      font-weight: bold;
+      text-align: center;
+      max-height: 15%;
+      width: 100%;
+      display: none;
+      small{
+        display: block;
+        font-size:  1.8rem;
+        font-weight: lighter;
+        line-height: 23px;
+      }
+    }
     .rule-panel {
       width: 100%;
       height: 100%;
       display: none;
+      text-align: center;
       img {
         width: 100%;
       }
-      .btn {
+      .ru-text {
+        font-size:  1.8rem;
+        font-weight: lighter;
+        line-height: 24px;
+        color:  @mainred;
+      }
+      .start {
         background: @mainred;
-        width: 60px;
-        height: 30px;
+        width: 170px;
+        height: 45px;
         color: #fff;
+        font-weight: bold;
+        font-size: 30px;
         outline: none;
         border: none;
+        margin-top: 20px;
       }
     }
   }
   .answer-page {
+    background: url("../image/white-bg.png");
+    background-size:  40px 41px;
+    width: 100%;
+    height: 100%;
     display: none;
-    .words-box {
-      .selected {
-        color: red;
+    .top-bar {
+      width: 100%;
+      height: 20px;
+      text-align: center;
+      position: relative;
+      padding-top: 7px;
+      .restart,.timer ,.skip{
+        font-size: 20px;
+        color: @mainred;
+        font-weight: bold;
+        line-height: 20px;
+      }
+      .restart {
+        position: absolute;
+        left: 0;
+        top: 7px;
+      }
+      .skip {
+        position: absolute;
+        right: 0;
+        top: 7px;
+      }
+    }
+    .question-pic {
+      position: relative;
+      z-index: 1;
+      img {
+        width: 100%;
+      }
+      .quenum {
+        position: absolute;
+        left: 0;
+        bottom: 40px;
+        background: @mainred;
+        color: @gold;
+        line-height: 24px;
+        text-align: center;
+        width: 64px;
+        height: 23px;
+        font-size: 16px;
+
       }
     }
     .answer-area {
+      width: 100%;
+      background: url("../image/red-bg.png");
+      background-size:  40px 41px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
       .answer-box {
+        text-align: center;
+        height: 23vw;
+        color: @mainred;
         .anser-word {
+          line-height: 23vw;
+          font-size: 13vw;
+          width: 18.5vw;
           display: inline-block;
-          width: 20px;
-          height: 20px;
-          border: 1px solid red;
+          font-weight: bold;
+        }
+        &.answer2 {
+          background: url("../image/wordbg2.png");
+          background-size: 100%;
+          -webkit-background-origin:content-box; /* Safari */
+          background-origin:content-box;
+        }
+        &.answer3 {
+          background: url("../image/wordbg3.png");
+          background-size: 100%;
+           -webkit-background-origin:content-box; /* Safari */
+          background-origin:content-box;
+
+        }
+        &.answer4 {
+          background: url("../image/wordbg4.png");
+          background-size: 100%;
+           -webkit-background-origin:content-box; /* Safari */
+          background-origin:content-box;
+        }
+        &.answer5 {
+          background: url("../image/wordbg5.png");
+          background-size: 100%;
+           -webkit-background-origin:content-box; /* Safari */
+          background-origin:content-box;
+        }
+      }
+      .words-box {
+        text-align: center;
+        .word {
+          border: 3px double @gold;
+          display: inline-block;
+          margin: 1px 2px;
+          width: 13.7vw;
+          height: 13vw;
+          line-height: 13vw;
+          font-weight: lighter;
+          font-size: 10vw;
+          color: @gold;
+         
+        }
+        .selected {
+          font-weight: bold;
         }
       }
     }
+  }
+  .finish-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url("../image/red-bg.png") ;
+    background-size:  40px 41px;
+    position: relative;
+    .finish-title {
+      width: 100%;
+      height: 15%;
+      text-align: center;
+      min-height: 87px;
+      img {
+        width: 80%;
+        max-width: 350px;
+        display: inline-block;
+      }
+    }
+    .record {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+      height: 23vw;
+      text-align: center;
+      .more-text {
+         font-size: 8vw;
+      font-weight: bold;
+       line-height: 15vw;
+       color :@gold;
+      }
+      .record-text {
+        width: 100%;
+       position: absolute; 
+       top: -28vw;
+       left:0;
+       color :@gold;
+       h2 {
+      font-size: 8vw;
+      font-weight: bold;
+       line-height: 11vw;
+       }
+       p {
+      font-size: 4.5vw;
+      line-height: 8vw;
+       }
+      }
+    .record-title {
+      width: 100%;
+      height: 23vw;
+      line-height: 23vw;
+      font-size: 13vw;
+      font-weight: bold;
+      color: @mainred;
+      background: url("../image/wordbg4.png");
+      background-size: 100%;
+      letter-spacing: 5.5vw;
+      text-indent : 6vw;
+    }
+    }
+  .finish-link {
+    width: 100%;
+    height: 38vw;
+    position: absolute;
+    top: 95vw;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+      &.retry {
+      background: url("../image/restart.png") no-repeat;
+      background-size: 100%;
+
+      }
+       &.continue {
+        height: 39vw;
+      background: url("../image/continue.png") no-repeat;
+      background-size: 100%;
+      }
+      .f-link {
+        display: block;
+        width: 33%;
+        height: 100%;
+        float: left;
+      }
+  } 
+
   }
 }
 
