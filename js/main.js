@@ -55,7 +55,6 @@
             });
 
             $restart.click(function () {
-             	// console.log(">>>>>>>>>>>>>");
                     // var r= confirm("确定要重新開始？");
                     // if (r==true) {
                      window.clearInterval(intervalobj);
@@ -81,7 +80,7 @@
                 // });
               questionbase=  linshidata;
                 initStagepanel(level);
-                setTimeout(function () {$coverbg.fadeOut(500)}, 1 )
+                setTimeout(function () {$coverbg.fadeOut(500)}, 3000 )
             }
             function initsize(){
 
