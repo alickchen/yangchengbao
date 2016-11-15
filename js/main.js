@@ -1,11 +1,12 @@
 //数组随机排序
 Array.prototype.randomSort=function() {
+    var arr = [].concat(this);
     var _arr = [];
-    var length = this.length;
+    var length = arr.length;
     for(var i=0; i<length; i++)
     {
-        var random = Math.floor(Math.random() * this.length);
-        _arr = _arr.concat(this.splice(random, 1));
+        var random = Math.floor(Math.random() * arr.length);
+        _arr = _arr.concat(arr.splice(random, 1));
     }
     return _arr;
 };
@@ -38,6 +39,7 @@ Array.prototype.randomSort=function() {
 
 
             var level = 0;
+            var record =0;
             var currentlevel=0;
             var questionbase={};
             var stagequestions=[];
@@ -60,7 +62,7 @@ Array.prototype.randomSort=function() {
                 $answerpage.show();
                 startCounting(time);
                 //恢复readypage
-                 $stagepanel.show();
+                $stagepanel.show();
                 $stagetext.show();
                 $rulepanel.hide();
                 $rules.hide();
@@ -86,7 +88,13 @@ Array.prototype.randomSort=function() {
 
 
             function init() {
-                initsize();
+                 initsize();
+                if (localStorage.getItem("level")){
+                    console.log();
+                    level = parseInt(localStorage.getItem("level"));
+                    record =localStorage.getItem("record");
+                }
+
                 // $.getJSON("data.json",function (data) {
                 //     questionbase = data;
                 // });
@@ -104,6 +112,7 @@ Array.prototype.randomSort=function() {
 
             function startChallenge (i){
                 stagequestions = questionbase["level"+i].questions.randomSort();
+                stagequestions = stagequestions.randomSort();
                 time = questionbase["level"+i].time;
                 $ruletext.text("在"+time+"秒内完成"+stagequestions.length+"题挑戰");
                 $stagepanel.hide();
@@ -141,7 +150,6 @@ Array.prototype.randomSort=function() {
                       })
                   }else {
                      sumup();
-                     
                   }
 
             }
@@ -204,32 +212,38 @@ Array.prototype.randomSort=function() {
                         switch(currentlevel)
                         {
                         case 0:
-                        $record.html(" <div class='record-text'><h2>第一關完成</h2><p>恭喜你叻過0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>醒水童生</div>");
+                        record = randomNum(500,1000);
+                        $record.html(" <div class='record-text'><h2>第一關完成</h2><p>恭喜你叻過"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>醒水童生</div>");
                         $finishlink.removeClass("retry").addClass("continue").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                         if (currentlevel==level){level+=1};
                         break;
                         case 1:
-                         $record.html(" <div class='record-text'><h2>第二關完成</h2><p>恭喜你叻過0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>得戚秀才</div>");
+                         record = randomNum(1000,2000);
+                         $record.html(" <div class='record-text'><h2>第二關完成</h2><p>恭喜你叻過"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>得戚秀才</div>");
                          $finishlink.removeClass("retry").addClass("continue").html( "<a class='f-link' href='#''></a> <span  class='f-link goback' ></span>  <span class='f-link share'></span>");
                           if (currentlevel==level){level+=1};
                           break;
                         case 2:
-                          $record.html(" <div class='record-text'><h2>第三關完成</h2><p>恭喜你叻過0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>招積舉人</div>");
+                          record = randomNum(2000,3000);
+                          $record.html(" <div class='record-text'><h2>第三關完成</h2><p>恭喜你叻過"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>招積舉人</div>");
                         $finishlink.removeClass("retry").addClass("continue").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                           if (currentlevel==level){level+=1};
                           break;
                         case 3:
-                          $record.html(" <div class='record-text'><h2>第四關完成</h2><p>恭喜你叻過0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>巴閉貢士</div>");
+                          record = randomNum(3000,4000);
+                          $record.html(" <div class='record-text'><h2>第四關完成</h2><p>恭喜你叻過"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>巴閉貢士</div>");
                           $finishlink.removeClass("retry").addClass("continue").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                           if (currentlevel==level){level+=1};
                           break;
                          case 4:
-                          $record.html(" <div class='record-text'><h2>第五關完成</h2><p>恭喜你叻過0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>威水進士</div>");
+                          record = randomNum(4000,5000);
+                          $record.html(" <div class='record-text'><h2>第五關完成</h2><p>恭喜你叻過"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>威水進士</div>");
                           $finishlink.removeClass("retry").addClass("continue").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                           if (currentlevel==level){level+=1};
                           break;
                           default:
-                          $record.html(" <div class='record-text'><h2>第六關完成</h2><p>恭喜你揮低曬0000位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>鳩屎狀元</div> <h2 class='more-text'>巧犀利啊!</h2>");
+                          record = randomNum(5000,6000);
+                          $record.html(" <div class='record-text'><h2>第六關完成</h2><p>恭喜你揮低曬"+record+"位自己友，</p><p>並獲得提名：</p> </div><div class='record-title'>鳩屎狀元</div> <h2 class='more-text'>巧犀利啊!</h2>");
                           $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback' ></span>  <span class='f-link share'></span>");
                           break;
                         }
@@ -243,29 +257,29 @@ Array.prototype.randomSort=function() {
                         $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                         break;
                         case 1:
-                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>0000位自己友！</p> </div><div class='record-title'>再戰一局</div>");
+                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>"+record+"位自己友！</p> </div><div class='record-title'>再戰一局</div>");
                         $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback' ></span>  <span class='f-link share'></span>");
                         break;
                         case 2:
-                          $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>0000位自己友！</p> </div><div class='record-title'>再戰一局</div>");
+                          $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>"+record+"位自己友！</p> </div><div class='record-title'>再戰一局</div>");
                           $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback' ></span>  <span class='f-link share'></span>");
                           break;
                         case 3:
-                         $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>0000位自己友！</p> </div><div class='record-title'>再戰一局</div>");
+                         $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>"+record+"位自己友！</p> </div><div class='record-title'>再戰一局</div>");
                           $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                           break;
                          case 4:
-                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>0000位自己友！</p> </div><div class='record-title'>再戰一局</div>");
+                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>"+record+"位自己友！</p> </div><div class='record-title'>再戰一局</div>");
                           $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback ' ></span>  <span class='f-link share'></span>");
                           break;
                          default:
-                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>0000位自己友！</p> </div><div class='record-title'>再戰一局</div>");
+                        $record.html(" <div class='record-text'><h2>挑戰失敗</h2><p>不過你已經醒過</p><p>"+record+"位自己友！</p> </div><div class='record-title'>再戰一局</div>");
                           $finishlink.removeClass("continue").addClass("retry").html( "<a class='f-link' href='#''></a> <span  class='f-link goback retry' ></span>  <span class='f-link share'></span>");
                           break;
                         }
                  }
                    $finishlink.find(".goback").click(function(){
-                     $finishpage.hide();
+                      $finishpage.hide();
                       $readypage.show();
                    });
                  $answerpage.hide();
@@ -273,6 +287,7 @@ Array.prototype.randomSort=function() {
                   rightnum =0;
                   queindex = 0;
                   initStagepanel(level);
+                  localRecord(level,record);
             };
             function startCounting(second) {
                 syssecond = second;
@@ -288,6 +303,18 @@ Array.prototype.randomSort=function() {
                     $timer.text( minite + "’" + second + "”");
                 } else {
                     sumup();
+                }
+            }
+            function randomNum(Min,Max){
+                var Range = Max - Min;
+                var Rand = Math.random();
+                var num = Min + Math.round(Rand * Range);
+                return num;
+            }
+            function localRecord(l,r) {
+                if(window.localStorage){
+                    localStorage.setItem("level", l);
+                    localStorage.setItem("record", r);
                 }
             }
 
