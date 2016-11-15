@@ -1,3 +1,15 @@
+//数组随机排序
+Array.prototype.randomSort=function() {
+    var _arr = [];
+    var length = this.length;
+    for(var i=0; i<length; i++)
+    {
+        var random = Math.floor(Math.random() * this.length);
+        _arr = _arr.concat(this.splice(random, 1));
+    }
+    return _arr;
+};
+
 
         $(function () {
             var $coverbg = $(".cover-bg");
@@ -91,7 +103,7 @@
 
 
             function startChallenge (i){
-                stagequestions = questionbase["level"+i].questions;
+                stagequestions = questionbase["level"+i].questions.randomSort();
                 time = questionbase["level"+i].time;
                 $ruletext.text("在"+time+"秒内完成"+stagequestions.length+"题挑戰");
                 $stagepanel.hide();
@@ -120,10 +132,11 @@
                       $answerbox.attr({"data-answer":item.answer, "class":"answer-box"}).addClass("answer"+item.answer.length);
                       $answerbox.empty();
                       $wordsbox.empty();
-                      for (var i=0; i<item.answer.length;i++) {
+                      var n = item.answer.length;
+                      for (var i=0; i<n ;i++) {
                           $("<span class='anser-word'></span>").click(answerclick).appendTo($answerbox);
                       }
-                      $.each(item.words.split(""),function (index,word){
+                      $.each(item.words.split("").randomSort(),function (index,word){
                           $("<span class='word'></span>").text(word).click(wordclick).appendTo($wordsbox);
                       })
                   }else {
@@ -136,9 +149,11 @@
                 if ($(this).text()){
                     var word = $(this).text();
                     $(this).empty();
-                    for (var i=0; i<  $wordsbox.find(".selected").size();i++) {
-                         if ($wordsbox.find(".selected").eq(i).text()==word){
-                            $wordsbox.find(".selected").eq(i).removeClass("selected");
+                    var $selectedword = $wordsbox.find(".selected");
+                    var n = $selectedword.size();
+                    for (var i=0; i<n ;i++) {
+                         if ($selectedword.eq(i).text()==word){
+                             $selectedword.eq(i).removeClass("selected");
                             break;
                         }
                     }
@@ -147,18 +162,20 @@
             
             function wordclick() {
                 var word = $(this).text();
+                var $answerword = $answerbox.find(".anser-word");
+                var n = $answerword.size();
                 if($(this).hasClass("selected")){
                     $(this).removeClass("selected");
-                   for (var i=0; i< $answerbox.find(".anser-word").size();i++) {
-                       if (  $answerbox.find(".anser-word").eq(i).text()==word){
-                              $answerbox.find(".anser-word").eq(i).empty();
+                   for (var i=0; i< n ;i++) {
+                       if (  $answerword.eq(i).text()==word){
+                             $answerword.eq(i).empty();
                             break;
                         }
                     }
                 }else {
-                    for (var i=0; i< $answerbox.find(".anser-word").size();i++) {
-                        if (!$answerbox.find(".anser-word").eq(i).text()) {
-                            $answerbox.find(".anser-word").eq(i).text(word);
+                    for (var i=0; i< n ;i++) {
+                        if (!$answerword.eq(i).text()) {
+                            $answerword.eq(i).text(word);
                             $(this).addClass("selected");
                             break;
                         }
