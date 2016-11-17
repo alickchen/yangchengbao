@@ -7,7 +7,6 @@ html {
   font-size: 62.5%;
 }
 html body {
-  max-width: 76vh;
   margin: 0 auto;
   position: relative;
 }
@@ -39,23 +38,24 @@ html body {
 .container .ready-page {
   width: 100%;
   height: 100%;
+  min-height: 136vw;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABtCAMAAABgMzSuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1ODBCMjJGNzZFNDlFNjExODcxMkU0OUQzNzY2OTk2RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMTkwRDAwREE4N0ExMUU2QkJBODlDMDAzQjFDNjMwQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMTkwRDAwQ0E4N0ExMUU2QkJBODlDMDAzQjFDNjMwQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxRTA2NTkxMjM5RkU2MTFBQjJCQkE0RUMyREU2REU2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU4MEIyMkY3NkU0OUU2MTE4NzEyRTQ5RDM3NjY5OTZEIi8+IDwvcmRmOkRlc2NyaXB0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");
   background-size: 40px 41px;
 }
 .container .ready-page .ready-title {
   width: 100%;
-  height: 15%;
+  max-width: 76vh;
+  margin: 0 auto;
   text-align: center;
-  min-height: 87px;
 }
 .container .ready-page .ready-title img {
-  width: 80%;
-  max-width: 350px;
+  width: 69%;
+  min-width: 260px;
   display: inline-block;
 }
 .container .ready-page .stage-text {
   color: #d42339;
-  font-size: 2.2rem;
+  font-size: 5vw;
   font-weight: 900;
   text-align: center;
   max-height: 15%;
@@ -63,6 +63,8 @@ html body {
   display: block;
 }
 .container .ready-page .stage-panel {
+  margin: 0 auto;
+  max-width: 76vh;
   width: 100%;
   height: 70%;
   position: relative;
@@ -94,7 +96,9 @@ html body {
   text-align: center;
   max-height: 15%;
   width: 100%;
+  max-width: 76vh;
   display: none;
+  margin: 0 auto;
 }
 .container .ready-page .rules small {
   display: block;
@@ -103,7 +107,9 @@ html body {
   line-height: 23px;
 }
 .container .ready-page .rule-panel {
+  margin: 0 auto;
   width: 100%;
+  max-width: 76vh;
   height: 70%;
   display: none;
   text-align: center;
@@ -133,10 +139,13 @@ html body {
   background-size: 40px 41px;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   display: none;
 }
 .container .answer-page .top-bar {
   width: 100%;
+  max-width: 76vh;
+  margin: 0 auto;
   height: 20px;
   text-align: center;
   position: relative;
@@ -235,7 +244,7 @@ html body {
   border: 3px double #f0d9b3;
   display: inline-block;
   margin: 1px 2px;
-  width: 13%;
+  width: 13.3%;
   height: 13vw;
   line-height: 13vw;
   font-weight: lighter;
